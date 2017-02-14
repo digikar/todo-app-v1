@@ -1,0 +1,21 @@
+    <div class="fixedcon">
+        <div class="card">
+            <div class="card-header">
+                Completed
+            </div>
+            <div class="card-block">
+            </div>
+            <div class="card-block">
+                 <ul *ngFor="let entry of completedArr" class="list">
+                   <li>{{entry}}</li>
+                  
+                </ul>
+            </div>
+            <div class="card-footer">
+                <a (click)="moveOut()" class="btn btn-danger">Delete Completed</a>
+            </div>
+        </div>
+  </div>
+
+
+

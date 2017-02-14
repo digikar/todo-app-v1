@@ -1,0 +1,20 @@
+ <div class=" centre1 form-group">
+            <br><br>
+            <label for="formFields_2"></label>
+            <input type="text" id="formFields_2" placeholder="Enter a todo task" size="45" [(ngModel)]="entry">
+            <button (click)="addEntry()" type="submit" class="btn btn-primary">Add TODO</button>
+
+            <!--button (click)="removeEntry()" type="submit" class="btn btn-primary">Remove</button-->
+            
+             <h2>Last completed task : {{removed}}</h2>
+            <!--button (click)="removeEntry()" type="submit" class="btn btn-primary">Remove TODO</button-->
+            
+</div>
+
+<div class="row">
+  
+<app-todo-ongoing [goingArr]='entryArr1' (updatedOn)='addInprogress($event)'></app-todo-ongoing>
+<app-todo-inprogress [inprogArr]='entryArr2'(updatedIn)='addCompleted($event)'></app-todo-inprogress>
+<app-todo-completed [completedArr]='entryArr3' (updatedCo)='removeEntry($event)'></app-todo-completed>
+   
+</div>
