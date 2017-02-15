@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class TodoOngoingComponent implements OnInit {
 
-  @Input() goingArr:string[];
+  @Input() goingArr:any[];
   @Output() updatedOn= new EventEmitter();
 
   constructor() { }

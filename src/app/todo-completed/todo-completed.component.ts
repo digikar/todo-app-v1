@@ -7,7 +7,7 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 })
 export class TodoCompletedComponent implements OnInit {
 
-  @Input() completedArr:string[];
+  @Input() completedArr:any[];
   @Output() updatedCo= new EventEmitter();
 
   constructor() { }

@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 })
 export class TodoInprogressComponent implements OnInit {
 
-  @Input() inprogArr:string[];
+  @Input() inprogArr:any[];
   @Output() updatedIn = new EventEmitter();
   constructor() { }
 
