@@ -9,15 +9,16 @@
             <div class="card-block">
                  <ul *ngFor="let element of inprogArr" class="list">
                    <li>
-                      <a (click)="opened=true" >{{element.entry}}</a>
+                      <a (click)="opened=true; setval(element);" >{{element.entry}}</a>
                       <clr-modal [(clrModalOpen)]="opened">
                        <h3 class="modal-title">{{element.entry}}</h3>
                         <div class="modal-body">
                         <p>Description :&emsp;{{element.entryDesc}}</p>
+                        <br>
                        </div>
                        <div class="modal-footer">
-                     
-                       <button type="button" class="btn btn-primary" (click)="opened = false">Ok</button>
+                        <button (click)="moveInOn(element); opened=false;" type="submit" class="btn btn-sm" >Move to Ongoing</button>
+                       <button (click)="moveInCo(element); opened=false;" type="submit" class="btn btn-sm">Move to Completed</button>
                        </div>
                         </clr-modal>
           

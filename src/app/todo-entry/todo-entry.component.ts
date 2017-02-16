@@ -52,6 +52,7 @@ export class TodoEntryComponent implements OnInit {
         this.entryArr1.push(this.entryObj);
         console.log(this.entryObj.entry);
       }
+      
     }
     addInprogress(status:number){
       if(status){
@@ -86,7 +87,59 @@ export class TodoEntryComponent implements OnInit {
     
     }
 
+    add_Inprogress_ongoing(obj){                         //add to inprogress from ongoing
+      var i=this.entryArr1.indexOf(obj);
+      var remove=this.entryArr1[i];
+      this.entryArr2.push(remove);
+      if(i>-1){
+        this.entryArr1.splice(i,1);
+      }
+      console.log(remove);
+    }
 
+    add_Completed_ongoing(obj){
+      var i= this.entryArr1.indexOf(obj);
+      var remove=this.entryArr1[i];
+      this.entryArr3.push(remove);
+      if(i>-1){
+        this.entryArr1.splice(i,1);
+      }
+    }
     
+    add_Ongoing_inprogress(obj){
+      var i=this.entryArr2.indexOf(obj);
+      var remove= this.entryArr2[i];
+      this.entryArr1.push(remove);
+      if(i>-1){
+        this.entryArr2.splice(i,1);
+      }
+    }
+
+    add_Completed_inprogress(obj){
+      var i=this.entryArr2.indexOf(obj);
+      var remove=this.entryArr2[i];
+      this.entryArr3.push(remove);
+      if(i>-1){
+        this.entryArr2.splice(i,1);
+      }
+    }
+
+    add_Ongoing_completed(obj){
+      var i= this.entryArr3.indexOf(obj);
+      var remove=this.entryArr3[i];
+      this.entryArr1.push(remove);
+      if(i>-1){
+        this.entryArr3.splice(i,1);
+      }
+    }
+
+    add_Inprogress_completed(obj){
+      var i=this.entryArr3.indexOf(obj);
+      var remove=this.entryArr3[i];
+      this.entryArr2.push(remove);
+      if(i>-1){
+        this.entryArr3.splice(i,1);
+      }
+    }
     }
 

@@ -1,0 +1,7 @@
+#grad {
+  background: blue; /* For browsers that do not support gradients */
+  background: linear-gradient(to bottom right,ghostwhite, cornflowerblue); /* Standard syntax */
+  padding: 20px;
+  border: blue;
+  border-width: 2px;
+}

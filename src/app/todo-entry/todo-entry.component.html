@@ -1,13 +1,17 @@
- <div class=" centre1 form-group">
+  <div id="grad">
+ <div class="main-container" >
+ 
+   <div class=" centre1 form-group">
             <br><br>
-            <label for="formFields_2"></label>
+            <label for="formFields_2">&emsp;&emsp;Task:&emsp;&emsp;&emsp;&nbsp;&nbsp;</label>
             <input type="text" id="formFields_2" placeholder="Enter a todo task" size="45" [(ngModel)]="entry">
             <br>
             <br>
-            <input type="text" id="formFields_2" placeholder="Enter a todo desc" size="85" [(ngModel)]="entryDesc">
-            <br>
-            <button (click)="addEntry()" type="submit" class="btn btn-primary">Add TODO</button>
-
+            <label for="formFields_2">&emsp;&emsp;Description:&nbsp;</label>
+            <input type="text" id="formFields_2" placeholder="Enter a todo desc" size="45" [(ngModel)]="entryDesc">
+            &emsp;&emsp;&emsp;&emsp;
+            <button (click)="addEntry()" type="submit" class="btn btn-primary">&emsp;&emsp;&emsp;Add TODO&emsp;&emsp;&emsp;</button>
+            <br><br>
             <!--button (click)="removeEntry()" type="submit" class="btn btn-primary">Remove</button-->
             <!--h2>{{entry}}</h2-->
              <!--h2>Last completed task : {{removed.entry}}</h2-->
@@ -16,9 +20,11 @@
 </div>
 
 <div class="row">
-  
-<app-todo-ongoing [goingArr]='entryArr1' (updatedOn)='addInprogress($event)'></app-todo-ongoing>
-<app-todo-inprogress [inprogArr]='entryArr2'(updatedIn)='addCompleted($event)'></app-todo-inprogress>
-<app-todo-completed [completedArr]='entryArr3' (updatedCo)='removeEntry($event)'></app-todo-completed>
+  &emsp;&emsp;&emsp;&emsp;&emsp;
+<app-todo-ongoing [goingArr]='entryArr1' (updatedOn)='addInprogress($event)' (updatedOnIn)='add_Inprogress_ongoing($event)' (updatedOnCo)='add_Completed_ongoing($event)' ></app-todo-ongoing>
+ &emsp;<app-todo-inprogress [inprogArr]='entryArr2'(updatedIn)='addCompleted($event)' (updatedInOn)='add_Ongoing_inprogress($event)'(updatedInCo)='add_Completed_inprogress($event)' ></app-todo-inprogress>
+ &emsp;<app-todo-completed [completedArr]='entryArr3' (updatedCo)='removeEntry($event)' (updatedCoOn)='add_Ongoing_completed($event)' (updatedCoIn)='add_Inprogress_completed($event)'></app-todo-completed>
    
+</div>
+</div>
 </div>

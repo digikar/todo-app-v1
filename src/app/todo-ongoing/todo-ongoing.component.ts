@@ -7,14 +7,27 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class TodoOngoingComponent implements OnInit {
 
+  obj:any;
+  //ele:any;
   @Input() goingArr:any[];
   @Output() updatedOn= new EventEmitter();
-
+  @Output() updatedOnIn= new EventEmitter();
+  @Output() updatedOnCo= new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
+  setval(obj){
+    this.obj=obj;
+  }
   moveInprogress(){
     this.updatedOn.emit(1);
   }
+  moveOnIn(){
+    this.updatedOnIn.emit(this.obj);
+  }
+  moveOnCo(){
+    this.updatedOnCo.emit(this.obj);
+  }
+  
 }
