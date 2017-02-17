@@ -29,5 +29,4 @@ export class TodoOngoingComponent implements OnInit {
   moveOnCo(){
     this.updatedOnCo.emit(this.obj);
   }
-  
 }
