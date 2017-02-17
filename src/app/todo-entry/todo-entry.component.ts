@@ -18,37 +18,21 @@ export class TodoEntryComponent implements OnInit {
     entryArr3=[];
     removed:string;
     entryObj:any;
-    today = new Date();
-    dd = this.today.getDate();
-    mm = this.today.getMonth()+1; //January is 0!
-    yyyy = this.today.getFullYear();
-   // entryObj: { entry: string,entryDesc: string };
-    constructor(){
-      /* if(this.dd<10) {
-        this.dd='0'+this.dd
-       } 
 
-       if(this.mm<10) {
-        this.mm='0'+this.mm
-       } 
 
-       this.today = this.mm+'/'+this.dd+'/'+this.yyyy;*/
-      }
+    constructor(){  
+    }
     
      ngOnInit() {
     }
 
-  //  entryObj=new todo_entries(this.entry,this.entryDesc);
-    
-   
     addEntry(){
       if((this.entry==undefined)||this.entry=="")
        alert("Dont try to be smart. Enter your TODO task first!");
       else{
         console.log(this.entry);
         this.entryObj=new todo_entries(this.entry,this.entryDesc);
-        //this.entryObj.entry=this.entry;
-        //this.entryObj.entryDesc=this.entryDesc;
+    
         this.entryArr1.push(this.entryObj);
         console.log(this.entryObj.entry);
       }
