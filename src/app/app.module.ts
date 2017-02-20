@@ -9,7 +9,6 @@ import { TodoEntryComponent } from './todo-entry/todo-entry.component';
 import { TodoOngoingComponent } from './todo-ongoing/todo-ongoing.component';
 import { TodoInprogressComponent } from './todo-inprogress/todo-inprogress.component';
 import { TodoCompletedComponent } from './todo-completed/todo-completed.component';
-import { TodoPopupComponent } from './todo-popup/todo-popup.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { TodoPopupComponent } from './todo-popup/todo-popup.component';
     TodoOngoingComponent,
     TodoInprogressComponent,
     TodoCompletedComponent,
-    TodoPopupComponent
   ],
   imports: [
     BrowserModule,
