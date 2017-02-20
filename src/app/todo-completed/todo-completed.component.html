@@ -6,8 +6,22 @@
             <div class="card-block">
             </div>
             <div class="card-block">
-                 <ul *ngFor="let entry of completedArr" class="list">
-                   <li>{{entry}}</li>
+                 <ul *ngFor="let element of completedArr" class="list">
+                   <li>
+                      <a (click)="opened=true; setval(element);modalElement=element" >{{element.entry}}</a>
+                      <clr-modal [(clrModalOpen)]="opened">
+                       <h3 class="modal-title">{{modalElement?.entry}}</h3>
+                        <div class="modal-body">
+                        <p>Description :&emsp;{{modalElement?.entryDesc}}</p>
+                        <br>
+                       </div>
+                       <div class="modal-footer">
+                        
+                       <button (click)="moveCoOn(element); opened=false;" type="submit" class="btn btn-sm" >Move to Ongoing</button>
+                       <button (click)="moveCoIn(element); opened=false;" type="submit" class="btn btn-sm">Move to Inprogress</button>
+                       </div>
+                        </clr-modal>
+                   </li>
                   
                 </ul>
             </div>
